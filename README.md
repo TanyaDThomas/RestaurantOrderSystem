@@ -2,6 +2,8 @@
 
 ## 📌 Overview
 
+#### Work In Progress
+
 This is a full-stack ASP.NET Core MVC web application for managing restaurant orders. It uses **Entity Framework Core**, **SQL Server**, and **ASP.NET Core Identity** for authentication and user management.
 
 The system allows users to browse a menu, add items to a cart, place orders, and generate printable receipts.
