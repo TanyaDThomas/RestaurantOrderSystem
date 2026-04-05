@@ -73,7 +73,7 @@ Each user is linked to a customer profile for order processing.
 
 ---
 
-## 📸 Future Improvements
+## 📸 Possible Future Improvements
 
 - Admin dashboard for managing menu items  
 - Order status real-time updates  
