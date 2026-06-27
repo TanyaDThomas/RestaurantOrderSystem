@@ -5,6 +5,7 @@
 
 bin/
 obj/
+appsettings.json
 *.user
 *.suo
 *.userosscache
