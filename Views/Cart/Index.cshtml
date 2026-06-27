@@ -1,0 +1,37 @@
+﻿@model IEnumerable<RestaurantOrderSystem.ViewModels.Cart.CartItemViewModel>
+
+@{
+    ViewData["Title"] = "View Your Cart";
+}
+
+<h2>Your Cart</h2>
+<hr>
+
+<table class="table table-responsive-lg">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th></th>
+           
+        </tr>
+    </thead>
+    <tbody>
+       @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+                <td>@item.Total</td>
+                <td>
+                    <a asp-action="Remove" asp-route-id="@item.ItemId"
+                       class="btn btn-danger btn-sm">Remove</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot></tfoot>
+</table>

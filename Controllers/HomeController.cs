@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using RestaurantOrderSystem.Models;
+using RestaurantOrderSystem.Domain;
+using RestaurantOrderSystem.ViewModels;
 using System.Diagnostics;
 
 namespace RestaurantOrderSystem.Controllers

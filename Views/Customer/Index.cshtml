@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RestaurantOrderSystem.ViewModels.Customer.CustomerViewModel>
+
+@{
+    ViewData["Title"] = "List of Customers";
+}
+
+<h2>List of Customers</h2>
+<hr />
+
+<p><a asp-action="Create" class="btn btn-primary">Create a New Customer</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>PostalCode</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var customer in Model)
+        {
+            <tr>
+                <td>@customer.FirstName @customer.LastName</td>
+                <td>@customer.Email</td>
+                <td>@customer.Phone</td>
+                <td>@customer.Address</td>
+                <td>@customer.City</td>
+                <td>@customer.State</td>
+                <td>@customer.PostalCode</td>
+                <td>
+                    <a asp-action="Details" asp-controller="Customer"
+                       asp-route-id="@customer.Id"
+                       class="btn btn-sm btn-info">Orders</a>
+
+                    <a asp-action="Edit" asp-controller="Customer"
+                       asp-route-id="@customer.Id"
+                       class="btn btn-sm btn-warning">Edit</a>
+
+                    <form asp-action="Delete" asp-controller="Customer"
+                          asp-route-id="@customer.Id"
+                          method="post"
+                          class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

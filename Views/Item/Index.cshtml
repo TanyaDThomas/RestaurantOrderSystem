@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RestaurantOrderSystem.Domain.Entities.Item>
+
+@{
+    ViewData["Title"] = "List of Items";
+}
+
+<h2>List of Our Menu Items</h2>
+<hr />
+
+<p><a asp-action="Create" class="btn btn-primary">Create a New Menu Item</a></p>
+
+<table class="table table-group-divider">
+<thead>
+    <tr><th>Picture</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+
+</thead>
+<tbody>
+    @foreach(var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    <img src="@item.ImagePath"
+                         class="img-thumbnail"
+                         style="width:70px; height:70px; object-fit:cover;" />
+                </td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>
+                   
+                    <a asp-action="Edit" asp-controller="Item"
+                       asp-route-id="@item.Id"
+                       class="btn btn-sm btn-warning">Edit</a>
+                </td>
+                 <td>
+                    <form asp-action="Delete"
+                        asp-controller="Item"
+                        asp-route-id="@item.Id"
+                        method="post"
+                        class="d-inline">
+                        <button type ="submit"
+                            class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+<tfoot></tfoot>
+</table>
+
+                       
